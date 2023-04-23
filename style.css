@@ -1,12 +1,16 @@
 /* Basic Style */
-body {
+.wrapper {
+  width: 500px;
+  margin: auto;
+}
+
+.body {
   background-color: #f8f8f8;
   color: #333333;
   font-family: Lato, sans-serif;
 }
 
 .header {
-  width: 500px;
   margin: 0 auto;
   display: block;
   text-align: right;
@@ -21,14 +25,15 @@ body {
 }
 
 @media (max-width:768px) {
+
   .header {
     text-align: center;
   }
+
 }
 
 .main {
   display: block;
-  width: 500px;
   margin: 0 auto 0;
 }
 
@@ -40,11 +45,12 @@ body {
 
 .item {
   display: flex;
+  padding-top: 20px;
 }
 
 ul {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 
 li,
@@ -57,7 +63,7 @@ button {
   outline: none;
 }
 
-button {
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -67,13 +73,23 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   color: #3a3A3a;
 }
 
+.btn.remove-btn img {
+  height: 2em;
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.btn.remove-btn img:hover {
+  transform: rotateZ(0);
+}
+
 /* Heading */
-h3,
-label[for="new-task"] {
+.section-heading {
+  display: block;
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -83,7 +99,7 @@ label[for="new-task"] {
   text-transform: uppercase;
 }
 
-input[type="text"] {
+.task[type="text"] {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -96,17 +112,17 @@ input[type="text"] {
   color: #888;
 }
 
-input[type="text"]:focus {
+.task[type="text"]:focus {
   color: #333;
 }
 
 /* New Task */
-label[for="new-task"] {
+.task[for="new-task"] {
   display: block;
   margin: 0 0 20px;
 }
 
-input#new-task {
+.task#new-task {
   width: 318px;
 }
 
@@ -138,16 +154,6 @@ li>label {
 
 li>input[type="text"] {
   width: 226px
-}
-
-button.remove-btn img {
-  height: 2em;
-  transform: rotateZ(45deg);
-  transition: transform 200ms ease-in;
-}
-
-button.remove-btn img:hover {
-  transform: rotateZ(0);
 }
 
 /* Completed */
